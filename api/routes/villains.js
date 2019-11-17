@@ -42,7 +42,8 @@ router.patch("/:id", async (req, res) => {
     "image",
     "damages",
     "healthDivisor",
-    "coinAward"
+    "coinAward",
+    "bgSrc"
   ];
   const isValidOperation = updates.every(update =>
     allowedUpdates.includes(update)
@@ -68,7 +69,8 @@ router.patch("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    const villain = await Villain.findOneAndDelete(req.params.id);
+    const villain = await Villain.findByIdAndDelete(req.params.id);
+    console.log(villain);
     if (!villain) {
       res.status(404).send();
     }
