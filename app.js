@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const path = require("path");
 
 const charactersRoutes = require("./api/routes/store/characters");
 const skinsRoutes = require("./api/routes/store/skins");
@@ -32,13 +31,6 @@ app.use((req, res, next) => {
 app.use("/store/characters", charactersRoutes);
 app.use("/store/skins", skinsRoutes);
 app.use("/villains", villainsRoutes);
-
-if (process.env.NODE_EN === "production") {
-  app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
 
 app.use((req, res, next) => {
   const error = new Error("Not found");

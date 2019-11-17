@@ -17,10 +17,12 @@ const Character = mongoose.model("Character", {
     default: 100
   },
   isBought: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   isAvailable: {
-    type: Boolean
+    type: Boolean,
+    default: false
   }
 });
 
