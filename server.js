@@ -1,3 +1,4 @@
+// on construit le serveur
 const http = require("http");
 const app = require("./app");
 

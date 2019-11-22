@@ -27,3 +27,5 @@ const Character = mongoose.model("Character", {
 });
 
 module.exports = Character;
+
+// le modèle permet de décrire les propriétés d'un character 

@@ -8,7 +8,7 @@ const Villain = mongoose.model("Villain", {
   name: {
     type: String,
     required: true,
-    trim: true
+    trim: true // trim permet de supprimer les espaces au début et à la fin des chaines de caractère
   },
   image: {
     type: String,
@@ -35,3 +35,5 @@ const Villain = mongoose.model("Villain", {
 });
 
 module.exports = Villain;
+
+//cf tableau de modélisation SQL (quête 4)
